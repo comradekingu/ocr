@@ -66,7 +66,7 @@ class OcrService {
 	private $view;
 
 	/**
-	 * @var
+	 * @var userId
 	 */
 	private $userId;
 
@@ -115,7 +115,7 @@ class OcrService {
 
 	/**
 	 * Gets the list of all available tesseract-ocr languages.
-	 *
+	 * TODO: remove and replace by docker behavior
 	 * @return string[] Languages
 	 */
 	public function listLanguages() {

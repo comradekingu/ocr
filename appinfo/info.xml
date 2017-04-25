@@ -70,11 +70,11 @@ Für weiter Informationen besuchen Sie die Homepage oder lesen Sie die zutreffen
     <screenshot>https://raw.githubusercontent.com/janis91/ocr/master/screenshots/sc4.png</screenshot>
     <dependencies>
         <php min-version="5.6" max-version="7.1" min-int-size="32" />
+        <database>sqlite</database>
+        <database>mysql</database>
+        <database>pgsql</database>
         <command>ocrmypdf</command>
         <command>tesseract</command>
-        <database>pgsql</database>
-        <database>mysql</database>
-        <database>sqlite</database>
         <owncloud min-version="9.2" max-version="9.2"/>
         <nextcloud min-version="11" max-version="11" />
     </dependencies>

@@ -9,7 +9,7 @@
  * @copyright Janis Koehr 2017
  */
 style('ocr', ['ocrpersonal']);
-script('ocr', ['ocrpersonalview', 'ocrpersonal']);
+script('ocr', ['dist/ocrpersonal.min']);
 ?>
 
 <div id="ocr" class="section">

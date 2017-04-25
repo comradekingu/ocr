@@ -90,3 +90,11 @@ html.ie8 .column-mtime .selectedActionsOCR {
 	width: 15px;
 	height: 15px;
 }
+
+.icon-ocr {
+	background-image: url('../img/icon/ocr.svg');
+}
+
+.pad-for-icon {
+	padding-left: 5px;
+}

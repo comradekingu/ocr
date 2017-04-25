@@ -11,10 +11,8 @@
 
 namespace OCA\Ocr\Controller;
 
-use OCA\Ocr\Db\OcrStatusMapper;
 use OCA\Ocr\Service\OcrService;
 use OCP\AppFramework\Controller;
-use OCP\AppFramework\Http\TemplateResponse;
 use OCP\IRequest;
 use OCP\Template;
 
