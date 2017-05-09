@@ -33,31 +33,6 @@ class OcrControllerTest extends TestCase {
 		);
 	}
 
-	public function testLanguages(){
-		$languages = 'just check if this value is returned correctly';
-		$this->service->expects($this->once())
-			->method('listLanguages')
-			->will($this->returnValue($languages));
-
-		$result = $this->controller->languages();
-
-		$this->assertEquals($languages, $result->getData());
-		$this->assertEquals(Http::STATUS_OK, $result->getStatus());
-	}
-
-	public function testLanguagesNotFound() {
-		$message = 'No languages found.';
-
-		$this->service->expects($this->once())
-			->method('listLanguages')
-			->will($this->throwException(new NotFoundException($message)));
-
-		$result = $this->controller->languages();
-
-		$this->assertEquals($message, $result->getData());
-		$this->assertEquals(Http::STATUS_NOT_FOUND, $result->getStatus());
-	}
-
 	public function testProcess() {
 		$message = 'PROCESSING';
 		$this->service->expects($this->once())

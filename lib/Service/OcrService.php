@@ -66,7 +66,7 @@ class OcrService {
 	private $view;
 
 	/**
-	 * @var
+	 * @var String
 	 */
 	private $userId;
 
@@ -111,40 +111,6 @@ class OcrService {
 		$this->l10n = $l10n;
 		$this->fileMapper = $fileMapper;
 		$this->shareMapper = $shareMapper;
-	}
-
-	/**
-	 * Gets the list of all available tesseract-ocr languages.
-	 *
-	 * @return string[] Languages
-	 */
-	public function listLanguages() {
-		try {
-			$success = -1;
-			$this->logger->debug('Fetching languages. ', ['app' => 'ocr']);
-			exec('tesseract --list-langs 2>&1', $result, $success);
-			$this->logger->debug('Result for list-language command: ' . json_encode($result), ['app' => 'ocr']);
-			if ($success === 0 && count($result) > 0) {
-				if (is_array($result)) {
-					$traineddata = $result;
-				} else {
-					throw new NotFoundException($this->l10n->t('No languages found.'));
-				}
-				$languages = array();
-				array_shift($traineddata); // delete the first element of the array as it is a description of tesseract
-				asort($traineddata); // sort the languages alphabetically
-				foreach ($traineddata as $td) {
-					$tdname = trim($td); // strip whitespaces
-					array_push($languages, $tdname); //add to language list
-				}
-				$this->logger->debug('Fetched languages: ' . json_encode($languages), ['app' => 'ocr']);
-				return $languages;
-			} else {
-				throw new NotFoundException($this->l10n->t('No languages found.'));
-			}
-		} catch (Exception $e) {
-			$this->handleException($e);
-		}
 	}
 
 	/**

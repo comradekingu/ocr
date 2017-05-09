@@ -20,8 +20,7 @@
 return [
     'routes' => [
 		['name' => 'ocr#process', 'url' => '/', 'verb' => 'POST'],
-		['name' => 'ocr#languages', 'url' => '/', 'verb' => 'GET'],
-		['name' => 'ocr#status', 'url' => '/status', 'verb' => 'GET'],
+		['name' => 'ocr#status', 'url' => '/', 'verb' => 'GET'],
 		['name' => 'PersonalSettings#deleteStatus', 'url' => '/settings/personal', 'verb' => 'DELETE'],
 		['name' => 'PersonalSettings#getAll', 'url' => '/settings/personal', 'verb' => 'GET']
     ]

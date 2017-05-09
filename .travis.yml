@@ -6,8 +6,6 @@ addons:
     - mysql-server-5.6
     - mysql-client-core-5.6
     - mysql-client-5.6
-    - tesseract-ocr
-    - tesseract-ocr-deu
 language: php
 php:
   - 5.6
@@ -41,10 +39,10 @@ before_install:
   - ./occ app:list
 
   # Setup behat for integration tests
-  - cd apps/$APP_NAME/
-  - cd tests/Integration/
-  - sh -c "if [ '$INTEGRATION' = '1' ]; then composer install; fi"
-  - cd ../../
+  #- cd apps/$APP_NAME/
+  #- cd tests/Integration/
+  #- sh -c "if [ '$INTEGRATION' = '1' ]; then composer install; fi"
+  #- cd ../../
 
 script:
   # Test the app
@@ -58,6 +56,10 @@ script:
   - cd tests/Unit
   - sh -c "if [ '$INTEGRATION' != '1' -a '$JSTESTS' != '1' -a '$CODECHECK' != '1' -a '$CODECHECK' != '2' ]; then phpunit --configuration phpunit.xml; fi"
   - cd ../..
+
+  # Test the worker
+  - cd worker/
+  - cd ..
 
   # Integration tests
   #- cd tests/Integration

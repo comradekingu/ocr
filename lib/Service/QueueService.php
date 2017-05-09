@@ -9,6 +9,8 @@
  * @copyright Janis Koehr 2017
  */
 
+ // TODO: tempfile creation can be removed - output directory will not be in temp dir.
+
 namespace OCA\Ocr\Service;
 
 use Exception;

@@ -52,17 +52,6 @@ class OcrController extends Controller {
 	}
 
 	/**
-	 * Get languages supported by installed tesseract. (Version has to be at least 3.02.02)
-	 * @NoAdminRequired
-	 * @return DataResponse
-	 */
-	public function languages() {
-		return $this->handleNotFound(function() {
-			return $this->service->listLanguages();
-		});
-	}
-
-	/**
 	 * Processing the srcFile(s)
 	 * @NoAdminRequired
 	 * @param string[] $languages - deu, eng...

@@ -75,12 +75,6 @@ class OcrServiceTest extends TestCase {
 			->getMock();
 	}
 
-	// tesseract is installed so there should be a array with at least 'eng' in the array
-	public function testListLanguages(){
-		$result = $this->service->listLanguages();
-		$this->assertTrue(in_array('eng',$result));
-	}
-
 	public function testDeleteStatus() {
 		$status = OcrStatus::fromRow([
 			'id' => 3,
